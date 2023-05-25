@@ -9,6 +9,14 @@
     "uid2": "^1.0.0"
   },
   "scripts": {
-    "start": "node server.js"
-  }
+    "start": "node index.js"
+  },
+  "name": "yuka-back",
+  "description": "site--yuka-back--felipe--feli-qlx2.code.run",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
