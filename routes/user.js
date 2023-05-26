@@ -5,6 +5,8 @@ const encBase64 = require("crypto-js/enc-base64");
 const router = express.Router();
 const User = require("../models/User");
 const isAuthenticated = require("../middlewares/isAuthenticated");
+const cors = require("cors");
+router.use(cors());
 
 ///////////////////
 //USER SIGNUP/////
