@@ -82,9 +82,9 @@ router.post("/login", async (req, res) => {
 // GET USER INFO //
 ///////////////////
 
-router.get("/user/:id", async (req, res) => {
+router.get("/user", isAuthenticated, async (req, res) => {
   try {
-    const userId = req.params.id;
+    const userId = req.user._id;
 
     const user = await User.findById(userId);
     if (!user) {
@@ -99,24 +99,6 @@ router.get("/user/:id", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
-// router.get("/user", isAuthenticated, async (req, res) => {
-//   try {
-//     const userId = req.user._id;
-
-//     const user = await User.findById(userId);
-//     if (!user) {
-//       return res.status(404).json({ message: "User not found" });
-//     }
-
-//     res.json({
-//       email: user.email,
-//       username: user.username,
-//     });
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// });
 
 ///////////////////
 //DELETE USER/////
