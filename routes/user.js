@@ -77,6 +77,28 @@ router.post("/login", async (req, res) => {
 });
 
 ///////////////////
+// GET USER INFO //
+///////////////////
+
+router.get("/user", isAuthenticated, async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json({
+      email: user.email,
+      username: user.username,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+///////////////////
 //DELETE USER/////
 //////////////////
 
@@ -113,6 +135,26 @@ router.post("/favorites/add", isAuthenticated, async (req, res) => {
     await user.save();
 
     res.json({ message: "Product added to favorites" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+/////////////////////////
+// GET USER FAVORITES //
+/////////////////////////
+
+router.get("/favorites", isAuthenticated, async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const favorites = user.favorites;
+    res.json({ favorites });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
