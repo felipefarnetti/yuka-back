@@ -15,7 +15,7 @@ const isAuthenticated = async (req, res, next) => {
 
     // Vérification que le token correspond bien à un user, je vais chercher dans ma collection User un élément dont la clef token contient le token reçu, je veux qu'on ne me renvoit que sa clef account
     const user = await User.findOne({ token: token }).select(
-      "username favorites scannedProducts"
+      "username favorites"
     );
     // console.log(user);
     if (!user) {

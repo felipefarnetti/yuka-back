@@ -189,46 +189,46 @@ router.delete("/favorites/delete", isAuthenticated, async (req, res) => {
   }
 });
 
-///////////////////////
-// ADD SCANNED PRODUCT
-///////////////////////
+// ///////////////////////
+// // ADD SCANNED PRODUCT
+// ///////////////////////
 
-router.post("/products/add", isAuthenticated, async (req, res) => {
-  try {
-    const { productId } = req.body;
-    const user = req.user;
+// router.post("/products/add", isAuthenticated, async (req, res) => {
+//   try {
+//     const { productId } = req.body;
+//     const user = req.user;
 
-    if (user.scannedProducts.includes(productId)) {
-      return res.status(409).json({ message: "Product already scanned" });
-    }
+//     if (user.scannedProducts.includes(productId)) {
+//       return res.status(409).json({ message: "Product already scanned" });
+//     }
 
-    user.scannedProducts.push(productId);
-    await user.save();
+//     user.scannedProducts.push(productId);
+//     await user.save();
 
-    res.json({ message: "Product added to scanned products" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+//     res.json({ message: "Product added to scanned products" });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
 
-///////////////////////
-// GET SCANNED PRODUCTS
-///////////////////////
+// ///////////////////////
+// // GET SCANNED PRODUCTS
+// ///////////////////////
 
-router.get("/products", isAuthenticated, async (req, res) => {
-  try {
-    const userId = req.user._id;
+// router.get("/products", isAuthenticated, async (req, res) => {
+//   try {
+//     const userId = req.user._id;
 
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+//     const user = await User.findById(userId);
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
 
-    const scannedProducts = user.scannedProducts;
-    res.json({ scannedProducts });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+//     const scannedProducts = user.scannedProducts;
+//     res.json({ scannedProducts });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
 
 module.exports = router;

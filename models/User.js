@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   salt: { type: String, required: true },
   hash: { type: String, required: true },
   favorites: [{ type: String }],
-  scannedProducts: [{ type: String }],
+  // scannedProducts: [{ type: String }],
 });
 
 const User = mongoose.model("User", userSchema);
