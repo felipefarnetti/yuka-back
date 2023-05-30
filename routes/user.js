@@ -189,6 +189,7 @@ router.delete("/favorites/delete", isAuthenticated, async (req, res) => {
   }
 });
 
+/// Decided to use AsyncStorage for the history of scans
 // ///////////////////////
 // // ADD SCANNED PRODUCT
 // ///////////////////////
