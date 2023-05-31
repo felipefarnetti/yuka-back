@@ -1,32 +1,33 @@
-# yuka-back
-Bonjour,
+# Yuka replica Backend
 
-Ce repositoire contient les routes necessaires pour :
+## Ce repositoire contient les routes necessaires pour :
 
-Utilisateur:
-Créer un utilisateur - post /signup
-Connexion d'un utilisateur - post /login
-Récupérer les informations de l'utilisateur - get /user
-Suprimmer un utilisateur - delete /user/delete
+### Utilisateur:
+1. Créer un utilisateur - post /signup
+2. Connexion d'un utilisateur - post /login
+3. Récupérer les informations de l'utilisateur - get /user
+4. Suprimmer un utilisateur - delete /user/delete
 
-Favoris:
-Ajouter un favorit - post /favorites/add
-Récupérer la liste des favorits - get /favorites
-Supprimer un favorit - delete /favorites/delete
+### Favoris:
+1. Ajouter un favorit - post /favorites/add
+2. Récupérer la liste des favorits - get /favorites
+3. Supprimer un favorit - delete /favorites/delete
 
 
-ce backend est hébergé chez northflank sur l'adresse :
+### Ce backend est hébergé chez northflank sur l'adresse :
 
 https://site--yuka-back--felipe--feli-qlx2.code.run
 
-Ces routes utilisent le middleware isAuthenticated pour les requetes dont l'anthentication est necessaire pour le frontend:
+### Ces routes utilisent le middleware isAuthenticated pour les requetes dont l'anthentication est necessaire pour le frontend:
 
 https://github.com/felipefarnetti/yuka-front
 
-Les données d'utilisateur sont sur MongoDB Online
+### Les données d'utilisateur sont sur MongoDB Online
 
-Les deux routes pour l'historique de products scannés ne sont pas fonctionnelles:
-Ajouter à l'historique - post /products/add
-Récupérer la liste de produits - get /products
+## Les deux routes pour l'historique de products scannés ne sont pas fonctionnelles:
+1. Ajouter à l'historique - post /products/add
+2. Récupérer la liste de produits - get /products
 
-L'usage du AsyncStorage a été testé pour le front - en cours
+#### L'usage du AsyncStorage a été testé pour le front - en cours
+
+contact: felipefarnetti@gmail.com
