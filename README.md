@@ -29,4 +29,4 @@ Les deux routes pour l'historique de products scannés ne sont pas fonctionnelle
 Ajouter à l'historique - post /products/add
 Récupérer la liste de produits - get /products
 
-L'usage du AsyncStorage a été testé pour le front.
+L'usage du AsyncStorage a été testé pour le front - en cours
